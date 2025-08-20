@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Techno SMS Enterprise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="assets/logo-placeholder.svg" alt="Logo" class="logo" /><span class="brand-text">Techno SMS Enterprise</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="muted">We'd love to hear about your project.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <form class="form card" action="mailto:miriamuwiringiye@gmail.com?subject=Website%20Inquiry" method="post" enctype="text/plain">
+        <div class="form__row">
+          <div class="form__field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="form__field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us what you need" required></textarea>
+          </div>
+        </div>
+        <button class="btn btn--primary" type="submit">Send Message</button>
+        <p class="mt-12 small muted">Tip: If your email app doesn't open, you can write directly to <strong>miriamuwiringiye@gmail.com</strong>.</p>
+      </form>
+
+      <aside>
+        <div class="card">
+          <h3 class="h4">Reach Us</h3>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-phone"></i> +250 783 849 786</li>
+            <li><i class="fa-solid fa-envelope"></i> miriamuwiringiye@gmail.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> Gasabo District, Murindi Market Room 21, Kigali</li>
+          </ul>
+          <div class="social mt-16">
+            <a aria-label="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a aria-label="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a aria-label="Twitter" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container small muted center py-16">© 2025 Techno SMS Enterprise.</div>
+  </footer>
+</body>
+</html>

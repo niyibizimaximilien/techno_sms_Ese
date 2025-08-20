@@ -1,0 +1,600 @@
+# Techno SMS Enterprise — Full Website Project (NO JS • Hard‑coded Responsive)
+
+Below are all project files. Put them in a folder (e.g., `techno-sms-site/`) exactly as named. This version has **no hamburger**, **no JavaScript**, and uses pure CSS media queries. All nav links are always visible.
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+/* =============================
+   File: index.html (Home)
+   ============================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Techno SMS Enterprise — Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / Global Nav (always visible) -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img src="assets/logo-placeholder.svg" alt="Techno SMS Enterprise" class="logo" />
+        <span class="brand-text">Techno SMS Enterprise</span>
+      </a>
+      <ul class="nav-links">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero hero--cover" role="banner">
+    <div class="hero__bg" style="--hero-img:url('https://images.unsplash.com/photo-1562158070-56a0d89af3b7?auto=format&fit=crop&w=1600&q=80')"></div>
+    <div class="container hero__content">
+      <h1>High‑Quality Uniforms & Promotional Garments</h1>
+      <p>Reliable apparel for construction, schools, hospitality, healthcare, and more — proudly serving Kigali, Rwanda.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="products.html">Explore Products</a>
+        <a class="btn btn--ghost" href="about.html">Learn About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights (3-up) -->
+  <section class="section">
+    <div class="container">
+      <header class="section__header">
+        <h2 class="h2">Why Choose Us</h2>
+        <p class="muted">Durability • Comfort • Sustainability</p>
+      </header>
+      <div class="grid grid--3 cards--lift">
+        <article class="card feature">
+          <div class="feature__icon"><i class="fa-solid fa-shield-heart"></i></div>
+          <h3 class="h4">Built to Last</h3>
+          <p>Our uniforms are engineered for demanding environments with long‑wear materials and quality stitching.</p>
+        </article>
+        <article class="card feature">
+          <div class="feature__icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3 class="h4">Sustainable</h3>
+          <p>We champion ethical practices and Made in Rwanda products to support local industry and reduce impact.</p>
+        </article>
+        <article class="card feature">
+          <div class="feature__icon"><i class="fa-solid fa-people-group"></i></div>
+          <h3 class="h4">Customer‑Centric</h3>
+          <p>Since 2017, we’ve focused on service and fit — getting teams outfitted comfortably and on time.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Categories Preview -->
+  <section class="section section--alt">
+    <div class="container">
+      <header class="section__header">
+        <h2 class="h2">Popular Categories</h2>
+        <p class="muted">From the job site to the front desk.</p>
+      </header>
+      <div class="grid grid--3 cards--lift">
+        <a class="card card--image" href="products.html#construction">
+          <img src="https://images.unsplash.com/photo-1581093458791-9d09d4c7f9b8?auto=format&fit=crop&w=1200&q=60" alt="Construction uniforms"/>
+          <div class="card__body">
+            <h3 class="h5">Construction Uniforms</h3>
+          </div>
+        </a>
+        <a class="card card--image" href="products.html#school">
+          <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=1200&q=60" alt="School uniforms"/>
+          <div class="card__body">
+            <h3 class="h5">School Uniforms</h3>
+          </div>
+        </a>
+        <a class="card card--image" href="products.html#hotel">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=60" alt="Hotel uniforms"/>
+          <div class="card__body">
+            <h3 class="h5">Hotel Uniforms</h3>
+          </div>
+        </a>
+      </div>
+      <div class="center mt-24">
+        <a class="btn btn--primary" href="products.html">See All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2 class="h2">Ready to outfit your team?</h2>
+      <p>Let’s talk sizing, timelines, and branding.</p>
+      <a class="btn btn--primary" href="contact.html">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div>
+        <img src="assets/logo-placeholder.svg" alt="Techno SMS Enterprise" class="logo logo--sm" />
+        <p class="muted mt-8">Kigali — Gasabo District, Murindi Market Room 21</p>
+      </div>
+      <div>
+        <h4 class="h5">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h5">Contact</h4>
+        <ul class="footer-links">
+          <li><i class="fa-solid fa-phone"></i> +250 783 849 786</li>
+          <li><i class="fa-solid fa-envelope"></i> miriamuwiringiye@gmail.com</li>
+        </ul>
+        <div class="social">
+          <a aria-label="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a aria-label="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a aria-label="Twitter" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container small muted center py-16">© 2025 Techno SMS Enterprise. All rights reserved.</div>
+  </footer>
+</body>
+</html>
+
+
+---
+
+/* =============================
+   File: about.html
+   ============================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Techno SMS Enterprise</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="assets/logo-placeholder.svg" alt="Logo" class="logo" /><span class="brand-text">Techno SMS Enterprise</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>About Us</h1>
+      <p class="muted">Customer‑centric garment manufacturing and capacity development since 2017.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <h2 class="h2">Vision</h2>
+        <p>Techno SMS Enterprise envisions a future where every client’s need for high‑quality garments is met with unparalleled excellence. We aim to be the cornerstone of Rwanda’s textile industry — setting the benchmark for innovation, service, and social responsibility.</p>
+        <h2 class="h2 mt-32">Mission</h2>
+        <p>We empower individuals and organizations through quality garments and capacity development, delivering innovative designs, dependable support, and sustainable growth.</p>
+      </div>
+      <div>
+        <div class="card card--image tall">
+          <img src="https://images.unsplash.com/photo-1520975807840-23d518c12b8b?auto=format&fit=crop&w=1200&q=60" alt="Team working on garments"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <header class="section__header">
+        <h2 class="h2">What We Stand For</h2>
+      </header>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3 class="h4">Quality</h3>
+          <p>Premium fabrics, precise cuts, rigorous QC — apparel that performs and looks sharp.</p>
+        </div>
+        <div class="card">
+          <h3 class="h4">Innovation</h3>
+          <p>Modern patterns and efficient production methods for better fit and faster delivery.</p>
+        </div>
+        <div class="card">
+          <h3 class="h4">Community</h3>
+          <p>Local jobs and training initiatives that grow skills and strengthen Kigali’s textile ecosystem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container small muted center py-16">© 2025 Techno SMS Enterprise.</div>
+  </footer>
+</body>
+</html>
+
+
+---
+
+/* =============================
+   File: products.html
+   ============================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products — Techno SMS Enterprise</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="assets/logo-placeholder.svg" alt="Logo" class="logo" /><span class="brand-text">Techno SMS Enterprise</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="products.html">Products</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Products</h1>
+      <p class="muted">Uniforms tailored for performance, comfort, and identity.</p>
+    </div>
+  </section>
+
+  <!-- Category Sections with IDs for anchors -->
+  <section class="section" id="construction">
+    <div class="container split v-center">
+      <div>
+        <h2 class="h2">Construction Company Uniforms</h2>
+        <p>Rugged, practical, and safe. Our workwear withstands tough conditions while maintaining comfort and mobility.</p>
+        <ul class="list">
+          <li>High‑visibility options</li>
+          <li>Reinforced seams / abrasion resistance</li>
+          <li>Weather‑appropriate layers</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card--image tall"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=60" alt="Construction uniforms"/></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="school">
+    <div class="container split v-center">
+      <div>
+        <div class="card card--image tall"><img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=1200&q=60" alt="School uniforms"/></div>
+      </div>
+      <div>
+        <h2 class="h2">School Uniforms</h2>
+        <p>Smart, durable, and comfortable uniforms that uphold the highest standards for students of all ages.</p>
+        <ul class="list">
+          <li>Wrinkle‑resistant fabrics</li>
+          <li>Easy care & long‑lasting</li>
+          <li>Custom colors and crests</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="restaurant">
+    <div class="container split v-center">
+      <div>
+        <h2 class="h2">Restaurant Uniforms</h2>
+        <p>From front‑of‑house to kitchen, we outfit your team with sleek, functional uniforms that elevate your brand.</p>
+        <ul class="list">
+          <li>Chef coats, aprons, non‑slip footwear</li>
+          <li>Breathable, stain‑resistant textiles</li>
+          <li>Custom embroidery / branding</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card--image tall"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=60" alt="Restaurant uniforms"/></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="hotel">
+    <div class="container split v-center">
+      <div>
+        <div class="card card--image tall"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=60" alt="Hotel uniforms"/></div>
+      </div>
+      <div>
+        <h2 class="h2">Hotel Uniforms</h2>
+        <p>Refined styles tailored for front desk, concierge, housekeeping, and F&B — hospitality that looks the part.</p>
+        <ul class="list">
+          <li>Elegant cuts and premium fabrics</li>
+          <li>Comfortable for long shifts</li>
+          <li>Cohesive brand presentation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hospital">
+    <div class="container split v-center">
+      <div>
+        <h2 class="h2">Hospital Uniforms</h2>
+        <p>Functional and hygienic attire for healthcare professionals — breathable, easy‑care, and professional.</p>
+        <ul class="list">
+          <li>Scrubs, lab coats, protective layers</li>
+          <li>Moisture‑wicking comfort</li>
+          <li>Antimicrobial options</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card--image tall"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=60" alt="Hospital uniforms"/></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="security">
+    <div class="container split v-center">
+      <div>
+        <div class="card card--image tall"><img src="https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=1200&q=60" alt="Security uniforms"/></div>
+      </div>
+      <div>
+        <h2 class="h2">Security Uniforms</h2>
+        <p>Presence, visibility, and performance — tailored for confidence and practicality in the field.</p>
+        <ul class="list">
+          <li>High‑visibility and tactical options</li>
+          <li>Weather‑resistant outerwear</li>
+          <li>Utility pockets & secure closures</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="made-in-rwanda">
+    <div class="container split v-center">
+      <div>
+        <h2 class="h2">Made in Rwanda</h2>
+        <p>Proudly supporting local craftsmanship, with apparel and accessories that reflect Rwanda’s culture and artistry.</p>
+        <ul class="list">
+          <li>Locally sourced where possible</li>
+          <li>Community and skills development</li>
+          <li>Lower environmental footprint</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card--image tall"><img src="https://images.unsplash.com/photo-1602810318383-e7c1e876b0d8?auto=format&fit=crop&w=1200&q=60" alt="Made in Rwanda products"/></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container small muted center py-16">© 2025 Techno SMS Enterprise.</div>
+  </footer>
+</body>
+</html>
+
+
+---
+
+/* =============================
+   File: training.html
+   ============================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Training — Techno SMS Enterprise</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="assets/logo-placeholder.svg" alt="Logo" class="logo" /><span class="brand-text">Techno SMS Enterprise</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a class="active" href="training.html">Training</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Training & Capacity Development</h1>
+      <p class="muted">Hands‑on programs designed to build industry‑ready skills.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid--3">
+      <article class="card">
+        <h3 class="h4">Garment Manufacturing Techniques</h3>
+        <p>From fabric selection to assembly workflows, learn efficient, professional methods used in production lines.</p>
+      </article>
+      <article class="card">
+        <h3 class="h4">Quality Control & Assurance</h3>
+        <p>Standards, inspection checkpoints, and documentation to ensure consistent, durable results.</p>
+      </article>
+      <article class="card">
+        <h3 class="h4">Design & Pattern Making</h3>
+        <p>Draft patterns, adjust for fit, and translate creative concepts into production‑ready specs.</p>
+      </article>
+      <article class="card">
+        <h3 class="h4">Industrial Sewing Skills</h3>
+        <p>Operate industrial machines safely and accurately — seams, hems, finishing, and maintenance.</p>
+      </article>
+      <article class="card">
+        <h3 class="h4">Ethical & Sustainable Practices</h3>
+        <p>Responsible sourcing, waste reduction, and inclusive workplace practices.</p>
+      </article>
+      <article class="card">
+        <h3 class="h4">Custom Programs</h3>
+        <p>We can tailor modules to your organization’s needs and timelines.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2 class="h2">Need a tailored training plan?</h2>
+      <p>Tell us your goals; we’ll shape the curriculum.</p>
+      <a class="btn btn--primary" href="contact.html">Request Details</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container small muted center py-16">© 2025 Techno SMS Enterprise.</div>
+  </footer>
+</body>
+</html>
+
+
+---
+
+/* =============================
+   File: contact.html
+   ============================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Techno SMS Enterprise</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="assets/logo-placeholder.svg" alt="Logo" class="logo" /><span class="brand-text">Techno SMS Enterprise</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="muted">We’d love to hear about your project.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <form class="form card" action="mailto:miriamuwiringiye@gmail.com?subject=Website%20Inquiry" method="post" enctype="text/plain">
+        <div class="form__row">
+          <div class="form__field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="form__field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us what you need" required></textarea>
+          </div>
+        </div>
+        <button class="btn btn--primary" type="submit">Send Message</button>
+        <p class="mt-12 small muted">Tip: If your email app doesn’t open, you can write directly to <strong>miriamuwiringiye@gmail.com</strong>.</p>
+      </form>
+
+      <aside>
+        <div class="card">
+          <h3 class="h4">Reach Us</h3>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-phone"></i> +250 783 849 786</li>
+            <li><i class="fa-solid fa-envelope"></i> miriamuwiringiye@gmail.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> Gasabo District, Murindi Market Room 21, Kigali</li>
+          </ul>
+          <div class="social mt-16">
+            <a aria-label="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a aria-label="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a aria-label="Twitter" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container small muted center py-16">© 2025 Techno SMS Enterprise.</div>
+  </footer>
+</body>
+</html>
+
+
+---
+
+/* =============================
+   File: style.css
+   ============================= */
+
+
+---
+
+/* =============================
+   File: assets/logo-placeholder.svg
+   (Replace with your own logo when ready)
+   ============================= */
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="52" viewBox="0 0 160 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="160" height="52" rx="8" fill="#e30613"/>
+<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="16" fill="#fff">YOUR LOGO</text>
+</svg>
+
+
+---
+
+/* =============================
+   Quick Start
+   ============================= */
+/* 1) Create folder `techno-sms-site/`
+   2) Inside it, add the files above with same names (keep `assets/` folder)
+   3) Open `index.html` in your browser
+   4) Replace `assets/logo-placeholder.svg` with your actual logo file (same name or update <img> src)
+   5) Swap Unsplash images with your own product photos when ready
+   6) Upload folder to hosting (TeleportHQ/Netlify/GitHub Pages/Vercel)
+*/
