@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Development Team — Techno SMS Enterprise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222222;
+      --muted: #667185;
+      --primary: #e30613;
+      --surface: #f7f7f8;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Utilities */
+    .container {
+      width: min(1150px, 92%);
+      margin-inline: auto;
+      padding: 0 1rem;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .small {
+      font-size: 0.9rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .mt-8 { margin-top: 0.5rem; }
+    .mt-12 { margin-top: 0.75rem; }
+    .mt-16 { margin-top: 1rem; }
+    .mt-24 { margin-top: 1.5rem; }
+    .mt-32 { margin-top: 2rem; }
+    .py-16 { padding-block: 1rem; }
+
+    .h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .h3 {
+      font-size: clamp(1.3rem, 2vw, 1.8rem);
+      line-height: 1.3;
+      margin: 0 0 0.5rem;
+    }
+
+    .h4 {
+      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+      margin: 0.2rem 0;
+    }
+
+    .h5 {
+      font-size: 1rem;
+      margin: 0.2rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      border-radius: 0.5rem;
+      padding: 0.9rem 1.2rem;
+      font-weight: 600;
+      transition: 0.2s;
+      border: 1px solid transparent;
+      text-align: center;
+      min-width: 44px;
+      min-height: 44px;
+      line-height: 1.2;
+    }
+
+    .btn--primary {
+      background: var(--primary);
+      color: #fff;
+      filter: brightness(.95);
+    }
+
+    .btn--primary:hover {
+      filter: brightness(0.92);
+    }
+
+    .btn--ghost {
+      background: rgba(0, 0, 0, 0.485);
+    }
+
+    .btn--ghost:hover {
+      border-color: transparent;
+      background-color: #111111;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo {
+      height: 44px;
+      width: auto;
+    }
+
+    .logo--sm {
+      height: 32px;
+    }
+
+    .brand-text {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+
+    /* Hamburger menu styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 100;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: #000;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 0.4rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a {
+      padding: 0.6rem 0.8rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a.active, 
+    .nav-links a:hover {
+      background: var(--surface);
+    }
+
+    /* Mobile styles */
+    @media screen and (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    /* Page hero */
+    .page-hero {
+      padding-block: 2rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .page-hero h1 {
+      margin: 0;
+    }
+
+    /* Sections */
+    .section {
+      padding-block: clamp(2rem, 5vw, 4rem);
+    }
+
+    .section--alt {
+      background: var(--surface);
+    }
+
+    .section__header {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    /* Layouts */
+    .grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .grid--3 {
+      grid-template-columns: 1fr;
+    }
+
+    .grid--4 {
+      grid-template-columns: 1fr;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .v-center {
+      align-items: center;
+    }
+
+    /* Cards */
+    .card {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 1rem;
+      overflow: hidden;
+      padding: 1.2rem;
+    }
+
+    .card--image {
+      padding: 0;
+    }
+
+    .card--image img {
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .card__body {
+      padding: 1rem;
+    }
+
+    .cards--lift .card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cards--lift .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .tall img {
+      aspect-ratio: 3/4;
+    }
+
+    /* Team member cards */
+    .team-member {
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    .team-member__image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      border: 4px solid var(--surface);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .team-member__name {
+      font-size: 1.3rem;
+      margin: 0.5rem 0;
+    }
+
+    .team-member__role {
+      color: var(--primary);
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+
+    .team-member__bio {
+      margin: 1rem 0;
+    }
+
+    .team-member__skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+
+    .skill-tag {
+      background: var(--surface);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .team-social {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .team-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .team-social a:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* Technology stack */
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .tech-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tech-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    .tech-name {
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      background: #fff;
+      margin-top: 2rem;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+      padding-block: 1.6rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin: 0.4rem 0;
+    }
+
+    .social {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      width: 44px;
+      border: 1px solid var(--border);
+      border-radius: 0.6rem;
+    }
+
+    /* Responsive Breakpoints */
+    @media (min-width: 640px) {
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .grid--4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 769px) {
+      .grid--3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      
+      .grid--4 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      
+      .split {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .footer__grid {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+      
+      .nav-links {
+        gap: 0.6rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid--3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      
+      .grid--4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      
+      .container {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <!-- <a class="brand" href="index.html"> -->
+       <a class="brand" href="index.html" aria-label="Techno SMS Enterprise Home">
+        <img src="assets/logo TSEI.png" alt="Techno SMS Enterprise logo" class="logo" />
+        <span class="brand-text">Techno <span style="color: red;">SMS</span> Enterprise</span>
+      </a>
+
+      <!-- Hamburger button -->
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="active" href="developers.html">About Developers</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Development Team</h1>
+      <p class="muted">The talented professionals behind our digital presence</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section__header">
+        <h2 class="h2">Our Development Team</h2>
+        <p class="muted">Meet the experts who build and maintain our digital infrastructure</p>
+      </header>
+      
+      <div class="grid grid--3">
+        <!-- Team Member 1 -->
+        <div class="card team-member">
+          <img src="/assets/developer.png" alt="Alex Johnson" class="team-member__image">
+          <h3 class="team-member__name">Alex Johnson</h3>
+          <p class="team-member__role">Lead Frontend Developer</p>
+          <p class="team-member__bio">Specializes in creating responsive, user-friendly interfaces with modern web technologies.</p>
+          
+          <div class="team-member__skills">
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">UI/UX</span>
+          </div>
+          
+          <div class="team-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+          </div>
+        </div>
+        
+        <!-- Team Member 2 -->
+        <div class="card team-member">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Michael Chen" class="team-member__image">
+          <h3 class="team-member__name">Michael Chen</h3>
+          <p class="team-member__role">Backend Developer</p>
+          <p class="team-member__bio">Expert in server-side development, database management, and API integration.</p>
+          
+          <div class="team-member__skills">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">API Design</span>
+          </div>
+          
+          <div class="team-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+          </div>
+        </div>
+        
+        <!-- Team Member 3 -->
+        <div class="card team-member">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Sarah Williams" class="team-member__image">
+          <h3 class="team-member__name">Sarah Williams</h3>
+          <p class="team-member__role">Full Stack Developer</p>
+          <p class="team-member__bio">Bridges frontend and backend development with expertise in multiple programming languages.</p>
+          
+          <div class="team-member__skills">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Vue.js</span>
+          </div>
+          
+          <div class="team-social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <header class="section__header">
+        <h2 class="h2">Our Technology Stack</h2>
+        <p class="muted">Modern tools and technologies we use to build exceptional digital experiences</p>
+      </header>
+      
+      <div class="tech-stack">
+        <div class="tech-item">
+          <div class="tech-icon"><i class="fab fa-html5"></i></div>
+          <div class="tech-name">HTML5</div>
+        </div>
+        
+        <div class="tech-item">
+          <div class="tech-icon"><i class="fab fa-css3-alt"></i></div>
+          <div class="tech-name">CSS3</div>
+        </div>
+        
+        <div class="tech-item">
+          <div class="tech-icon"><i class="fab fa-js"></i></div>
+          <div class="tech-name">JavaScript</div>
+        </div>
+        
+        <div class="tech-item">
+          <div class="tech-icon"><i class="fab fa-react"></i></div>
+          <div class="tech-name">React</div>
+        </div>
+        
+        <div class="tech-item">
+          <div class="tech-icon"><i class="fab fa-node-js"></i></div>
+          <div class="tech-name">Node.js</div>
+        </div>
+        
+        <div class="tech-item">
+          <div class="tech-icon"><i class="fas fa-database"></i></div>
+          <div class="tech-name">MongoDB</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section__header">
+        <h2 class="h2">Our Development Process</h2>
+        <p class="muted">How we create digital solutions for Techno SMS Enterprise</p>
+      </header>
+      
+      <div class="grid grid--4">
+        <div class="card">
+          <div class="feature__icon"><i class="fas fa-lightbulb"></i></div>
+          <h3 class="h4">Concept & Planning</h3>
+          <p>We begin with understanding your business needs and planning the optimal solution.</p>
+        </div>
+        
+        <div class="card">
+          <div class="feature__icon"><i class="fas fa-pencil-ruler"></i></div>
+          <h3 class="h4">Design & Prototyping</h3>
+          <p>Creating wireframes and prototypes to visualize the final product before development.</p>
+        </div>
+        
+        <div class="card">
+          <div class="feature__icon"><i class="fas fa-code"></i></div>
+          <h3 class="h4">Development</h3>
+          <p>Building the application with clean, maintainable code using modern technologies.</p>
+        </div>
+        
+        <div class="card">
+          <div class="feature__icon"><i class="fas fa-rocket"></i></div>
+          <h3 class="h4">Launch & Maintenance</h3>
+          <p>Deploying the solution and providing ongoing support and updates as needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="split v-center">
+        <div>
+          <h2 class="h2">Interested in Joining Our Team?</h2>
+          <p>We're always looking for talented developers who are passionate about creating innovative digital solutions. Send us your resume and portfolio!</p>
+          <a class="btn btn--primary mt-16" href="contact.html">Contact Us</a>
+        </div>
+        <div>
+          <div class="card card--image tall">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Team collaboration"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div>
+        <!-- Replace with your actual logo -->
+        <div style="width: 32px; height: 32px; background: var(--primary); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-bottom: 0.5rem;">TSE</div>
+        <p class="muted mt-8">Kigali — Gasabo District, Murindi Market Room 21</p>
+      </div>
+      <div>
+        <h4 class="h5">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="developers.html">Developers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="h5">Contact</h4>
+        <ul class="footer-links">
+          <li><i class="fa-solid fa-phone"></i> +250 783 849 786</li>
+          <li><i class="fa-solid fa-envelope"></i> miriamuwiringiye@gmail.com</li>
+        </ul>
+        <div class="social">
+          <a aria-label="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a aria-label="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a aria-label="Twitter" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container small muted center py-16">© 2025 Techno SMS Enterprise. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
