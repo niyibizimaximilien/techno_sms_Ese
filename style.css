@@ -62,7 +62,6 @@ a {
 .mt-32 { margin-top: 2rem; }
 .py-16 { padding-block: 1rem; }
 .mt-16:hover{
-  background-color: var(--primary);
 }
 
 .h2 {
